@@ -19,12 +19,13 @@ namespace CoffeeShopConsoleApp
                 new BlackCoffee(),
                 new Cortado(),
                 new Latte(),
-                new FlatWhite()
+                //new FlatWhite(),
+                new FlatWhite(5)
             };
 
             foreach (var coffee in orderList)
             {
-                Console.WriteLine($"{coffee}:  {coffee.Strength()}  - PRICE  {coffee.Price()}");
+                Console.WriteLine($"{coffee}:  {coffee.Strength()}  - PRICE  {coffee.Price()} - Discount: {coffee.Discount}");
             }
 
             Console.ForegroundColor = ConsoleColor.Blue; // adding a Color for better visual
@@ -43,6 +44,13 @@ namespace CoffeeShopConsoleApp
             }
 
             Console.ForegroundColor = ConsoleColor.White; // adding a Color for better visual
+
+            //orderList.Add(new FlatWhite(4));
+            //foreach (var cc in orderList)
+            //{
+            //    Console.WriteLine(cc.Discount);
+            //}
+
 
         }
         

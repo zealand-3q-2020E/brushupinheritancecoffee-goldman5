@@ -1,7 +1,18 @@
-﻿namespace CoffeeShopConsoleApp
+﻿using System.Threading;
+
+namespace CoffeeShopConsoleApp
 {
     class FlatWhite : Coffee, IMilk
     {
+        public FlatWhite(int discount) : base(0)
+        {
+            Discount = discount;
+        }
+
+        public FlatWhite()
+        {
+        }
+
         public override string Strength()
         {
             return $"So so!";
@@ -13,9 +24,8 @@
 
         public override int Price()
         {
-            return 35;
+            return 50 - base.Discount;
         }
-
 
         public override string ToString()
         {
